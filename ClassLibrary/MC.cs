@@ -5,23 +5,15 @@ using System.Text;
 namespace ClassLibrary
 {
     /// <summary>
-    /// MC class, contains an empty constructor and the Price and VehicleType methods
+    /// MC class, contains a constructor and the Price and VehicleType methods
     /// </summary>
     public class MC: Vehicle
     {
-        public MC(string licensePlate) : base(licensePlate)
+        public MC(string licensePlate, bool brobizz) : base(licensePlate, brobizz)
         {
+            this.basePrice = 125;
         }
-
-        /// <summary>
-        /// Returns the price of the MC
-        /// </summary>
-        /// <returns>double</returns>
-        public override double Price()
-        {
-            return 125;
-        }
-
+        
         /// <summary>
         /// Returns the type of the vehicle
         /// </summary>

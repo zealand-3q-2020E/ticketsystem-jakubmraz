@@ -11,7 +11,7 @@ namespace ClassLibraryTestProject
         public void TestCarPrice240()
         {
             //Arrange
-            Car car = new Car("0");
+            Car car = new Car("0", false);
             //Act
             var actualPrice = car.Price();
             //Assert
@@ -22,7 +22,7 @@ namespace ClassLibraryTestProject
         public void TestCarVehicleType()
         {
             //Arrange
-            Car car = new Car("0");
+            Car car = new Car("0", false);
             //Act
             var actualVehicleType = car.VehicleType();
             //Assert
@@ -33,7 +33,7 @@ namespace ClassLibraryTestProject
         public void TestMCPrice125()
         {
             //Arrange
-            MC mc = new MC("0");
+            MC mc = new MC("0", false);
             //Act
             var actualPrice = mc.Price();
             //Assert
@@ -44,7 +44,7 @@ namespace ClassLibraryTestProject
         public void TestMCVehicleType()
         {
             //Arrange
-            MC mc = new MC("0");
+            MC mc = new MC("0", false);
             //Act
             var actualVehicleType = mc.VehicleType();
             //Assert
@@ -56,11 +56,22 @@ namespace ClassLibraryTestProject
         public void TestLicensePlateOver7CharsException()
         {
             //Arrange
-            Car car = new Car("00000000");
+            Car car = new Car("00000000", false);
             //Act
             var licensePlate = car.LicensePlate;
             //Assert
             Assert.AreEqual("00000000", licensePlate);
+        }
+
+        [TestMethod]
+        public void TestCarPriceWithDiscount()
+        {
+            //Arrange
+            Car car = new Car("0", true);
+            //Act
+            var actualPrice = car.Price();
+            //Assert
+            Assert.AreEqual(228, actualPrice, 1);
         }
     }
 }

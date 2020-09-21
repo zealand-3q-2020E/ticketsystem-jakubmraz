@@ -3,21 +3,13 @@
 namespace ClassLibrary
 {
     /// <summary>
-    /// Car class, contains an empty constructor and the Price and VehicleType methods
+    /// Car class, contains a constructor and the Price and VehicleType methods
     /// </summary>
     public class Car:Vehicle
     {
-        public Car(string licensePlate) : base(licensePlate)
+        public Car(string licensePlate, bool brobizz) : base(licensePlate, brobizz)
         {
-        }
-
-        /// <summary>
-        /// Returns the price of the car
-        /// </summary>
-        /// <returns>double</returns>
-        public override double Price()
-        {
-            return 240;
+            this.basePrice = 240;
         }
 
         /// <summary>
