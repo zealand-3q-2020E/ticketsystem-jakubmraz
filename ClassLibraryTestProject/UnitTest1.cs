@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary;
 
@@ -10,7 +11,7 @@ namespace ClassLibraryTestProject
         public void TestCarPrice240()
         {
             //Arrange
-            Car car = new Car();
+            Car car = new Car("0");
             //Act
             var actualPrice = car.Price();
             //Assert
@@ -21,7 +22,7 @@ namespace ClassLibraryTestProject
         public void TestCarVehicleType()
         {
             //Arrange
-            Car car = new Car();
+            Car car = new Car("0");
             //Act
             var actualVehicleType = car.VehicleType();
             //Assert
@@ -32,7 +33,7 @@ namespace ClassLibraryTestProject
         public void TestMCPrice125()
         {
             //Arrange
-            MC mc = new MC();
+            MC mc = new MC("0");
             //Act
             var actualPrice = mc.Price();
             //Assert
@@ -43,11 +44,23 @@ namespace ClassLibraryTestProject
         public void TestMCVehicleType()
         {
             //Arrange
-            MC mc = new MC();
+            MC mc = new MC("0");
             //Act
             var actualVehicleType = mc.VehicleType();
             //Assert
             Assert.AreEqual("MC", actualVehicleType);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void TestLicensePlateOver7CharsException()
+        {
+            //Arrange
+            Car car = new Car("00000000");
+            //Act
+            var licensePlate = car.LicensePlate;
+            //Assert
+            Assert.AreEqual("00000000", licensePlate);
         }
     }
 }

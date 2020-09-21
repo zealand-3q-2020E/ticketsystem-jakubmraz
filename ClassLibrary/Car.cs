@@ -7,6 +7,10 @@ namespace ClassLibrary
     /// </summary>
     public class Car:Vehicle
     {
+        public Car(string licensePlate) : base(licensePlate)
+        {
+        }
+
         /// <summary>
         /// Returns the price of the car
         /// </summary>

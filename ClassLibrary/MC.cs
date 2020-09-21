@@ -9,6 +9,10 @@ namespace ClassLibrary
     /// </summary>
     public class MC: Vehicle
     {
+        public MC(string licensePlate) : base(licensePlate)
+        {
+        }
+
         /// <summary>
         /// Returns the price of the MC
         /// </summary>

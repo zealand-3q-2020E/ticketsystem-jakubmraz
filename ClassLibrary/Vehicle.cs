@@ -9,6 +9,14 @@ namespace ClassLibrary
     /// </summary>
     public abstract class Vehicle
     {
+        protected Vehicle(string licensePlate)
+        {
+            if (licensePlate.Length > 7)
+            {
+                throw new Exception("License plate cannot be longer than 7 characters.");
+            }
+        }
+
         public string LicensePlate { get; set; }
         public DateTime Date { get; set; }
 
