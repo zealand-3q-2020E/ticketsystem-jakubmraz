@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:ClassLibrary.Car">
+            <summary>
+            Car class, contains a constructor and the Price and VehicleType methods
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Car.VehicleType">
+            <summary>
+            Returns the type of the vehicle
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:ClassLibrary.MC">
+            <summary>
+            MC class, contains a constructor and the Price and VehicleType methods
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.MC.VehicleType">
+            <summary>
+            Returns the type of the vehicle
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:ClassLibrary.Vehicle">
+            <summary>
+            Abstract Vehicle class, contains a constructor and the virtual Price and VehicleType methods
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Vehicle.#ctor(System.String,System.Boolean)">
+            <summary>
+            Constructor that takes two parameters, also sets the Date to the current time and sets the base price of the vehicle
+            </summary>
+            <param name="licensePlate">string - cannot be longer than 7 characters</param>
+            <param name="brobizz">bool - specifies if 5% discount is applied</param>
+        </member>
+        <member name="M:ClassLibrary.Vehicle.Price">
+            <summary>
+            Returns the price of the vehicle. Applies a 5% discount if the vehicle has the brobizz attribute.
+            </summary>
+            <returns>double</returns>
+        </member>
+        <member name="M:ClassLibrary.Vehicle.VehicleType">
+            <summary>
+            Returns the type of the vehicle
+            </summary>
+            <returns>string</returns>
+        </member>
+    </members>
+</doc>
