@@ -9,7 +9,7 @@ namespace ClassLibrary
     /// </summary>
     public abstract class Vehicle
     {
-        private bool brobizz;
+        protected bool brobizz;
         protected int basePrice;
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace ClassLibrary
         /// Returns the price of the vehicle. Applies a 5% discount if the vehicle has the brobizz attribute.
         /// </summary>
         /// <returns>double</returns>
-        public double Price()
+        public virtual double Price()
         {
             if (brobizz)
                 return basePrice * 0.95;
@@ -49,9 +49,6 @@ namespace ClassLibrary
         /// Returns the type of the vehicle
         /// </summary>
         /// <returns>string</returns>
-        public virtual string VehicleType()
-        {
-            return "Not assigned";
-        }
+        public abstract string VehicleType();
     }
 }
